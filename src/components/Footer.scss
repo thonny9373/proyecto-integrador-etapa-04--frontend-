@@ -1,0 +1,151 @@
+.footer-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 1.875rem; 
+    padding: 1.25rem; 
+    background-color: rgb(173, 162, 162);
+    border-top: 0.0625rem solid #e7e7e7; 
+  
+.footer-column {
+      flex: 1;
+      margin: 0.625rem; 
+      min-width: 12.5rem; 
+  
+.footer-title {
+        font-size: 1.1875rem; 
+        font-weight: 900;
+        margin-bottom: 0.625rem; 
+      }
+  
+.footer-subtitle {
+        font-size: 0.875rem; 
+        margin: 0.3125rem 0; 
+      }
+  
+.footer-links {
+        list-style: none;
+        padding: 0;
+  
+        li {
+          margin-bottom: 0.3125rem; 
+  
+          a {
+            color: #333;
+            text-decoration: none;
+  
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+  
+      .payment-methods,
+      .app-download,
+      figure {
+        display: flex;
+        gap: 0.625rem; 
+  
+        .payment-logo,
+        .app-logo,
+        .loguitos {
+          max-width: 3.125rem; 
+        }
+      }
+  
+      .contacto {
+        .a-contacto {
+          display: inline-block;
+          margin: 0.3125rem 0; 
+  
+          .img-contacto {
+            width: 1.5rem; 
+            height: 1.5rem; 
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  }
+  
+.footer-copy {
+    text-align: center;
+    padding: 0.625rem; 
+    background-color: black;
+    color: white;
+    margin-top: 1.25rem; 
+  }
+  
+.footer-footer {
+    margin-top: 9.375rem; 
+  }
+  
+.texto-final {
+    background-color: #ded;
+    font-size: 0.75rem; 
+    color: black;
+    margin-top: 2.5rem; 
+  }
+  
+  
+  $img-size-lg: 1.25rem; 
+  $img-size-md: 0.9375rem; 
+  $img-size-sm: 0.3125rem; 
+  
+  
+  @mixin responsive-img($size) {
+    width: $size;
+    height: $size;
+  }
+  
+  
+  .whatsapp {
+    position: fixed; 
+    bottom: 1.875rem; 
+    right: 1.25rem; 
+    display: flex;
+    align-items: center;
+    gap: 0.625rem; 
+    background-color: transparent; 
+    padding: 0.625rem; 
+    border-radius: 0.625rem; 
+    box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.3);
+    z-index: 5;
+  
+    &:hover {
+      box-shadow: 0 0.0625rem 2.5rem 0.625rem rgb(0, 0, 0);
+      transform: scale(1.2);
+    }
+  
+    a img {
+      @include responsive-img($img-size-lg);
+    }
+  
+    p {
+      font-size: 1rem;
+      margin: 0;
+    }
+  
+    @media (max-width: 37.5rem) {
+      a img {
+        @include responsive-img($img-size-md);
+      }
+  
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  
+    @media (max-width: 25rem) {
+      flex-direction: column; 
+      a img {
+        @include responsive-img($img-size-sm);
+      }
+  
+      p {
+        font-size: 0.8rem;
+        text-align: center;
+      }
+    }
+  }

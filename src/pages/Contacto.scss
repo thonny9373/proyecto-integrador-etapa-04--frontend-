@@ -1,0 +1,115 @@
+.formFormulario {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+div {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+select {
+    appearance: none;
+    background-color: white;
+    background-image: url('data:image/svg+xml;base64,...');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    padding-right: 30px;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+button {
+    padding: 12px;
+    background-color: red;
+    color: white;
+    border-radius: 4px;
+    border: solid black 1px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 5px;
+
+    &:hover {
+        box-shadow: 0 1px 40px 10px rgb(170, 54, 54);
+        transform: scale(1.2);
+    }
+}
+
+button:hover {
+    background-color: rgb(131, 131, 131);
+}
+
+button:active {
+    background-color: rgb(0, 0, 0);
+}
+
+@media (max-width: 600px) {
+    form {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+select {
+    position: relative;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #fff;
+    appearance: none;
+    padding-right: 30px;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDE2IDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEuNCAxbDEuNDI2LTEuNDI2TDEwLjYxNiAxTDcuODUgM2gyLjczOUwxMCAzLjc1NUwxLjk5OTggM0wxLjQwMDEgMSIgZmlsbD0iIzAwMDAwMCIvPjwvc3ZnPg=='); /* Icono de flecha */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+}
+
+select:focus {
+    border-color: #007bff;
+}

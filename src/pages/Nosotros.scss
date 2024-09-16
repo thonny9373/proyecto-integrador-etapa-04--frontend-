@@ -1,0 +1,61 @@
+.nosotros-main {
+    margin: 1.875rem;
+}
+
+.nosotros-h1 {
+    background-color: #000000;
+    color: white;
+    margin-top: 3.125rem;
+    margin-bottom: 3.125rem;
+    padding: 2.5rem;
+    border-top-left-radius: 1.25rem;
+    border-top-right-radius: 1.25rem;
+    border-bottom-left-radius: 1.25rem;
+    border-bottom-right-radius: 1.25rem;
+    overflow: hidden;
+    transition: all 1.2s;
+
+    &:hover {
+        transform: scale(1.07);
+    }
+}
+
+.nosotros-h3 {
+    background-color: red;
+    color: white;
+    margin-top: 3.125rem;
+    margin-bottom: 3.125rem;
+    padding: 2.5rem;
+    border-top-left-radius: 1.25rem;
+    border-top-right-radius: 1.25rem;
+    border-bottom-left-radius: 1.25rem;
+    border-bottom-right-radius: 20rem;
+    overflow: hidden;
+    transition: all 1.9s;
+
+    &:hover {
+        transform: scale(1.07);
+    }
+}
+
+$float-margin: 0.625rem;
+
+.left-img {
+    float: left;
+    margin-right: $float-margin;
+}
+
+.right-img {
+    float: right;
+    margin-left: $float-margin;
+}
+
+.clear {
+    clear: both;
+}
+
+.nosotros-p {
+    background-color: rgb(234, 236, 236);
+    padding: 3.75rem;
+    border-radius: 0.625rem;
+}

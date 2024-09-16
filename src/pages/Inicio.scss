@@ -1,0 +1,109 @@
+.section-cards {
+    border-radius: 0.3125rem;
+    overflow: visible;
+    box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.20);
+    object-fit: contain;
+
+    &__header {
+        margin-bottom: 9.375rem;
+        margin-right: 1.875rem;
+        margin-left: 1.875rem;
+        padding: 6.25rem;
+        position: relative;
+        border-radius: 0.3125rem;
+        overflow: hidden;
+        box-shadow: 0.3125rem 0 1.875rem 0.0625rem rgba(0, 0, 0, 0.20);
+        background-color: rgb(246, 253, 253);
+
+    
+        @media only screen and (max-width: 768px) {
+            display: none; 
+        }
+    }
+}
+
+.contenerdor {
+    margin-bottom: 6.25rem;
+}
+
+.logo-marcas {
+    width: 5.625rem;
+    height: 3.75rem;
+    object-fit: contain;
+    transition: all 0.9s;
+
+    &:hover {
+        box-shadow: 0 1px 40px 10px rgb(170, 54, 54);
+        transform: scale(1.2);
+    }
+}
+
+.figure-marcas {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.125rem;
+    padding-bottom: 0.625rem;
+}
+
+.product-price {
+    font-size: 1.125rem;
+    font-weight: 900;
+    text-align: left;
+    margin-left: 1.875rem;
+}
+
+.anade-carrito {
+    display: flex;
+    justify-content: left;
+    justify-content: space-between;
+    text-decoration: none;
+    background-color: red;
+    color: white;
+    padding: 0.3125rem 3.125rem 0.3125rem 0.3125rem;
+}
+
+.h1-ofertas {
+    display: flex;
+    justify-content: right;
+    font-size: 2.5rem;
+    position: absolute;
+    top: 1.5625rem;
+    right: 3.125rem;
+    overflow: visible;
+    transition: all 0.9s;
+
+    &:hover {
+        box-shadow: 0 1px 40px 10px rgb(170, 54, 54);
+        transform: scale(1.2);
+    }
+}
+
+.p-marcas {
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 1.875rem;
+    margin-bottom: 6.25rem;
+    box-shadow: 0 1px 20px 1px rgb(105, 29, 29);
+    background-color: red;
+    color: white;
+}
+
+.logo-carro-1 {
+    position: relative;
+    margin-top: 0.25rem; 
+    padding: 0.3125rem; 
+    transform: scale(1.2);
+  }
+  
+  .loguito {
+    background-color: black;
+    padding: 0.125rem; 
+    width: 2.5rem; 
+    height: 2.5rem; 
+  }
+  
+  .carrito {
+    width: 2.5rem; 
+    height: 1.5625rem; 
+  }

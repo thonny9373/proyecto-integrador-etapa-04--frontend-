@@ -1,0 +1,75 @@
+.tabla-alta {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  
+    thead {
+      background-color: red;
+      border:  solid black 1px;
+      color: white;
+  
+      th {
+        padding: 12px;
+        text-transform: uppercase;
+      }
+    }
+  
+    tbody {
+      tr {
+        &:nth-child(even) {
+          background-color: #f2f2f2;
+        }
+  
+        &:hover {
+          background-color: #ddd;
+        }
+  
+        td {
+          padding: 10px;
+          border-bottom: 1px solid #ddd;
+        }
+  
+        
+        td:nth-child(7) { 
+          text-align: center;
+  
+          img {
+            max-width: 50px;
+            border-radius: 4px;
+          }
+        }
+  
+        td:nth-child(8),
+        td:nth-child(9) {
+          text-align: center;
+  
+          button {
+            background-color: red;
+            margin: 2px 2px;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+  
+            &:hover {
+              background-color: grey;
+            }
+  
+            &.delete {
+              background-color: black;
+  
+              &:hover {
+                background-color: #e53935;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
