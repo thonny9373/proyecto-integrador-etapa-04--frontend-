@@ -4,6 +4,7 @@ import './Inicio.scss'
 import useTitulo from '../hooks/useTitulo'
 import Card from '../components/Card'
 import ProductosContext from '../context/ProductosContext'
+import '../pages/Carrito.scss'
 
 const Inicio = () => {
 
@@ -43,8 +44,8 @@ const Inicio = () => {
         <div className="cards-container" id="contenedor-cards">
 
           {
-            productos && productos.map((producto) => (
-              <Card key={producto.id} producto={producto} />
+            productos && productos.map( (producto, idx) => (
+              <Card key={producto.id+idx} producto={producto} />
             ))
           }
           

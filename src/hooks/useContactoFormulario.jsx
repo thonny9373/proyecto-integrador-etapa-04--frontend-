@@ -233,6 +233,7 @@ export const useContactoFormulario = () => {
         const datosCompletos = { ...formData, nacionalidad, telefono };
         console.log(datosCompletos);
         
+        
     };
 
     return {
@@ -246,4 +247,5 @@ export const useContactoFormulario = () => {
         handleInputChange,
         handleNacionalidadChange
     };
+    
 };

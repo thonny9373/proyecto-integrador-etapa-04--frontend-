@@ -1,70 +1,85 @@
-import { createContext } from "react";
+import { createContext, useState, useEffect } from "react";
 import { useLocalStorage } from "../hooks/useLocalStorage";
+import { helperPeticionesHttp } from "../helpers/helper-peticiones-http";
 
-/* CREANDO CONTEXTO */
+const CarritoContext = createContext();
 
-/* 1er -> Creación del contexto */
-const CarritoContext = createContext()
-/* 2do -> El armado del provider */
-const CarritoProvider = ( { children } ) => {
-    //              0
-    const [ agregarAlCarrito, eliminarDelCarrito, limpiarCarrito, carrito ] = useLocalStorage('carrito', [])
+const CarritoProvider = ({ children }) => {
+    const url = import.meta.env.VITE_BACKEND_CARRITOS;
 
+    const [agregarAlCarrito, eliminarDelCarrito, limpiarCarrito, carrito] = useLocalStorage('carrito', []);
+    const [cartCount, setCartCount] = useState(0);
 
-    function elProductoEstaEnElCarrito(producto) { 
-        console.log('Analizo si el producto esta en el carrito')
-        // 0, el producto no esta en el carrito
-        // 1, el producto ya esta en el carrito
-        //debugger
-        const nuevoArray = carrito.filter(prod => prod.id === producto.id)
-        return nuevoArray.length
+    useEffect(() => {
+        const totalProductos = carrito.reduce((total, producto) => total + producto.cantidad, 0);
+        setCartCount(totalProductos);
+    }, [carrito]);
+
+    function elProductoEstaEnElCarrito(producto) {
+        console.log('Analizo si el producto está en el carrito');
+        const nuevoArray = carrito.filter(prod => prod.id === producto.id);
+        return nuevoArray.length;
     }
 
     function obtenerProductoDeCarrito(producto) {
-        return carrito.find(prod => prod.id === producto.id)
+        return carrito.find(prod => prod.id === producto.id);
     }
 
     const agregarProductoAlCarritoContext = (producto) => {
-
-        console.log('ya estoy en el agregar del contexto', producto)
+        console.log('Ya estoy en el agregar del contexto', producto);
+        let nuevoCarrito;
 
         if (!elProductoEstaEnElCarrito(producto)) {
-
-            producto.cantidad = 1
-            agregarAlCarrito(producto)
-
+            producto.cantidad = 1;
+            nuevoCarrito = [...carrito, producto];
+            agregarAlCarrito(producto);
         } else {
-            
-            const productoDeCarrito = obtenerProductoDeCarrito(producto)
-            console.log(productoDeCarrito)
-            productoDeCarrito.cantidad++
-            window.localStorage.setItem('carrito', JSON.stringify(carrito))
+            const productoDeCarrito = obtenerProductoDeCarrito(producto);
+            productoDeCarrito.cantidad++;
+            nuevoCarrito = [...carrito];
+            window.localStorage.setItem('carrito', JSON.stringify(nuevoCarrito));
         }
-    }
+
+        setCartCount(cartCount + 1);
+    };
 
     const eliminarProductoDelCarritoContext = (id) => {
-        console.log(id)
-        eliminarDelCarrito(id)
-    }
+        console.log(id);
+        eliminarDelCarrito(id);
+    };
 
     const limpiarCarritoContext = () => {
-        limpiarCarrito()
-    }
+        limpiarCarrito();
+    };
 
-    const guardarCarritoContext = () => {
-        console.log(carrito)
-    }
+    const guardarCarritoContext = async () => {
+        console.log(carrito);
+        const options = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(carrito),
+        };
+        try {
+            const losProductosEnElCarrito = await helperPeticionesHttp(url, options);
+            console.log(losProductosEnElCarrito);
+
+            limpiarCarritoContext();
+        } catch (error) {
+            console.error('[guardarCarritoContext]', error);
+        }
+    };
 
     const data = {
         carrito,
+        cartCount,
         agregarProductoAlCarritoContext,
         eliminarProductoDelCarritoContext,
         guardarCarritoContext,
-        limpiarCarritoContext
-    }
+        limpiarCarritoContext,
+    };
 
-    return <CarritoContext.Provider value={data}>{ children }</CarritoContext.Provider>
-}
+    return <CarritoContext.Provider value={data}>{children}</CarritoContext.Provider>;
+};
 
-export { CarritoProvider }
-export default CarritoContext
+export { CarritoProvider };
+export default CarritoContext;

@@ -1,16 +1,14 @@
-import { useContext } from 'react';
-import './Card.scss'
+import React, { useContext } from 'react';
+import './Card.scss';
 import CarritoContext from './../context/CarritoContext';
 
-const Card = ( { producto}) => {
-
-  const { agregarProductoAlCarritoContext } = useContext(CarritoContext)
-
+const Card = ({ producto }) => {
+  const { agregarProductoAlCarritoContext } = useContext(CarritoContext);
 
   const handleAgregar = (producto) => {
-    console.log(producto.id)
-    agregarProductoAlCarritoContext(producto)
-  }
+    console.log("Producto agregado al carrito:", producto.id);
+    agregarProductoAlCarritoContext(producto);
+  };
 
   return (
     <div className="card">
@@ -25,10 +23,9 @@ const Card = ( { producto}) => {
         <div className="card__content">
           <h2 className="card__heading">{producto.nombre}</h2>
           <div className="card__description">
-            <p>
-              {producto.detalles}
-            </p>
-            <button onClick={() => handleAgregar(producto)}>Agregar</button>
+            <p>{producto.detalles}</p>
+            <p className="card__price">Precio: ${producto.precio}</p>
+            <button onClick={() => handleAgregar(producto)}>Agregar al carrito</button> {}
           </div>
         </div>
       </article>
@@ -36,4 +33,4 @@ const Card = ( { producto}) => {
   );
 };
 
-export default Card
+export default Card;

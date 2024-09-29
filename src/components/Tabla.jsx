@@ -11,22 +11,22 @@ const Tabla = () => {
     <table className="tabla-alta">
       <thead>
         <tr>
-          <th>Nombre</th>
-          <th>Precio</th>
-          <th>Stock</th>
-          <th>Marca</th>
-          <th>Categoría</th>
-          <th>Detalles</th>
-          <th>Foto</th>
-          <th>Envío</th>
-          <th>Acciones</th>
+          <th className='nombre'>Nombre</th>
+          <th className='precio'>Precio</th>
+          <th className='stock'>Stock</th>
+          <th className='marca'>Marca</th>
+          <th className='categoria'>Categoría</th>
+          <th className='detalle'>Detalles</th>
+          <th className='foto'>Foto</th>
+          <th className='envio'>Envío</th>
+          <th className='acciones'>Acciones</th>
         </tr>
       </thead>
       <tbody>
 
         {
-          productos && productos.map( producto => (
-            <TablaFila key={producto.id} producto={producto} />
+          productos && productos.map( (producto, idx) => (
+            <TablaFila key={producto.id+idx} producto={producto} />
           ))
 
         }

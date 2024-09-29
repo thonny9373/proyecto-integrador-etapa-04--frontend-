@@ -1,0 +1,62 @@
+
+$primary-color: #4CAF50;
+$secondary-color: #f9f9f9;
+$error-color: #f44336;
+
+.compra-exitosa {
+  background-color: $secondary-color;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+
+  &__titulo {
+    color: $primary-color;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  &__mensaje {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 40px;
+  }
+
+  &__resumen {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid $primary-color;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    &__subtitulo {
+      color: $primary-color;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    &__lista {
+      list-style: none;
+      padding: 0;
+
+      &__item {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+  
+    
+    &__mensaje-vacio {
+      text-align: center;
+      color: $error-color;
+      font-weight: bold;
+    }
+  }
+}

@@ -5,6 +5,7 @@ import Nosotros from "../pages/Nosotros"
 import Contacto from "../pages/Contacto"
 import NoEncontrado from "../pages/NoEncontrado"
 import Carrito from "../pages/Carrito"
+import CompraExitosa from "../components/CompraExitosa"
 
 const Rutas = () => {
 
@@ -29,6 +30,10 @@ const Rutas = () => {
             {
                 path: '/carrito',
                 element: <Carrito />
+            },
+            {
+                path: '/compraExitosa',
+                element: <CompraExitosa />
             },
             {
                 path: '*',

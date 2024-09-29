@@ -1,5 +1,13 @@
 .nosotros-main {
     margin: 1.875rem;
+
+    @media (max-width: 768px) {
+        margin: 1.25rem;
+    }
+
+    @media (max-width: 480px) {
+        margin: 0.625rem;
+    }
 }
 
 .nosotros-h1 {
@@ -8,15 +16,22 @@
     margin-top: 3.125rem;
     margin-bottom: 3.125rem;
     padding: 2.5rem;
-    border-top-left-radius: 1.25rem;
-    border-top-right-radius: 1.25rem;
-    border-bottom-left-radius: 1.25rem;
-    border-bottom-right-radius: 1.25rem;
+    border-radius: 1.25rem;
     overflow: hidden;
     transition: all 1.2s;
 
     &:hover {
         transform: scale(1.07);
+    }
+
+    @media (max-width: 768px) {
+        padding: 2rem;
+        font-size: 1.5rem;
+    }
+
+    @media (max-width: 480px) {
+        padding: 1.25rem;
+        font-size: 1.25rem;
     }
 }
 
@@ -26,28 +41,57 @@
     margin-top: 3.125rem;
     margin-bottom: 3.125rem;
     padding: 2.5rem;
-    border-top-left-radius: 1.25rem;
-    border-top-right-radius: 1.25rem;
-    border-bottom-left-radius: 1.25rem;
-    border-bottom-right-radius: 20rem;
+    border-radius: 1.25rem 1.25rem 20rem 1.25rem;
     overflow: hidden;
     transition: all 1.9s;
 
     &:hover {
         transform: scale(1.07);
     }
-}
 
-$float-margin: 0.625rem;
+    @media (max-width: 768px) { 
+        padding: 2rem;
+        font-size: 1.25rem;
+        border-radius: 1.25rem;
+    }
+
+    @media (max-width: 480px) {
+        padding: 1.25rem;
+        font-size: 1rem;
+        border-radius: 0.625rem;
+    }
+}
 
 .left-img {
     float: left;
-    margin-right: $float-margin;
+    margin-right: 0.625rem;
+
+    @media (max-width: 768px) {
+        float: none;
+        display: block;
+        margin: 0 auto 1.25rem auto;
+        max-width: 100%;
+    }
+
+    @media (max-width: 480px) {
+        margin-bottom: 1rem;
+    }
 }
 
 .right-img {
     float: right;
-    margin-left: $float-margin;
+    margin-left: 0.625rem;
+
+    @media (max-width: 768px) {
+        float: none;
+        display: block;
+        margin: 0 auto 1.25rem auto;
+        max-width: 100%;
+    }
+
+    @media (max-width: 480px) {
+        margin-bottom: 1rem;
+    }
 }
 
 .clear {
@@ -58,4 +102,14 @@ $float-margin: 0.625rem;
     background-color: rgb(234, 236, 236);
     padding: 3.75rem;
     border-radius: 0.625rem;
+
+    @media (max-width: 768px) {
+        padding: 2.5rem;
+        font-size: 1rem;
+    }
+
+    @media (max-width: 480px) {
+        padding: 1.5rem;
+        font-size: 0.875rem;
+    }
 }

@@ -1,75 +1,126 @@
 .tabla-alta {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 18px;
-    text-align: left;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  
-    thead {
-      background-color: red;
-      border:  solid black 1px;
-      color: white;
-  
-      th {
-        padding: 12px;
-        text-transform: uppercase;
-      }
-    }
-  
-    tbody {
-      tr {
-        &:nth-child(even) {
-          background-color: #f2f2f2;
-        }
-  
-        &:hover {
-          background-color: #ddd;
-        }
-  
-        td {
-          padding: 10px;
-          border-bottom: 1px solid #ddd;
-        }
-  
-        
-        td:nth-child(7) { 
-          text-align: center;
-  
-          img {
-            max-width: 50px;
-            border-radius: 4px;
-          }
-        }
-  
-        td:nth-child(8),
-        td:nth-child(9) {
-          text-align: center;
-  
-          button {
-            background-color: red;
-            margin: 2px 2px;
-            border: none;
-            color: white;
-            padding: 5px 10px;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-  
-            &:hover {
-              background-color: grey;
-            }
-  
-            &.delete {
-              background-color: black;
-  
-              &:hover {
-                background-color: #e53935;
-              }
-            }
-          }
-        }
-      }
-    }
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tabla-alta thead {
+  background-color: red;
+  border: solid black 1px;
+  color: white;
+}
+
+.tabla-alta thead th {
+  padding: 12px;
+  text-transform: uppercase;
+}
+
+.tabla-alta tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.tabla-alta tbody tr:hover {
+  background-color: #ddd;
+}
+
+.tabla-alta tbody td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabla-alta tbody td:nth-child(7) {
+  text-align: center;
+}
+
+.tabla-alta tbody td:nth-child(7) img {
+  max-width: 50px;
+  border-radius: 4px;
+}
+
+.tabla-alta tbody td:nth-child(8),
+.tabla-alta tbody td:nth-child(9) {
+  text-align: center;
+}
+
+.tabla-alta tbody td:nth-child(8) button,
+.tabla-alta tbody td:nth-child(9) button {
+  background-color: red;
+  margin: 2px 2px;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.tabla-alta tbody td:nth-child(8) button:hover,
+.tabla-alta tbody td:nth-child(9) button:hover {
+  background-color: grey;
+}
+
+.tabla-alta tbody td:nth-child(9) button.delete {
+  background-color: black;
+}
+
+.tabla-alta tbody td:nth-child(9) button.delete:hover {
+  background-color: #e53935;
+}
+
+@media (max-width: 1024px) {
+  .tabla-alta {
+    font-size: 16px;
+  }
+
+  .tabla-alta tbody td {
+    padding: 8px;
+  }
+
+  .tabla-alta thead th {
+    padding: 10px;
   }
   
+  .tabla-alta tbody td:nth-child(7) img {
+    max-width: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tabla-alta {
+    font-size: 10px;
+    width: 100%;
+  }
+
+  .tabla-alta tbody tr {
+    display: table-row;
+    width: 100%;
+  }
+
+  .tabla-alta tbody td {
+    padding: 3px;
+  }
+
+  .tabla-alta thead th {
+    padding: 3px;
+  }
+
+  .tabla-alta tbody td:nth-child(7) img {
+    max-width: 15px;
+  }
+
+  .tabla-alta tbody td {
+    font-size: 8px;
+  }
+
+  .tabla-alta thead th:nth-child(8),
+  .tabla-alta thead th:nth-child(5),
+  .tabla-alta thead th:nth-child(6),
+  .tabla-alta tbody td:nth-child(8),
+  .tabla-alta tbody td:nth-child(5),
+  .tabla-alta tbody td:nth-child(6) {
+    display: none;
+  }
+}
