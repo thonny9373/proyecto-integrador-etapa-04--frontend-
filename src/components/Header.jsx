@@ -1,5 +1,5 @@
 import './Header.scss'
-import Navbar from './Navbar';
+import NavBar from './NavBar';
 import SearchBar from './SearchBar';
 
 const Header = () => {
@@ -7,7 +7,7 @@ const Header = () => {
     <header className="main-header">
       <input type="checkbox" id="menu" />
 
-      <Navbar />
+      <NavBar />
 
       <SearchBar />
       

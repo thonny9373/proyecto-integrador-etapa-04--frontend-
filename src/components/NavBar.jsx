@@ -1,7 +1,7 @@
 import menuItems from "../constants/menuItems"
 import NavItem from "./NavItem"
 
-const Navbar = () => {
+const NavBar = () => {
   return (
     <nav className="nav-bar">
     <ul className="nav-bar__nav-list">
@@ -17,4 +17,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default NavBar

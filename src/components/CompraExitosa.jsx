@@ -17,7 +17,7 @@ const CompraExitosa = () => {
             <div className="compra-exitosa__resumen">
                 <h2 className="compra-exitosa__subtitulo">Resumen de tu pedido</h2>
                 {orderItems.length === 0 ? (
-                    <p className="compra-exitosa__mensaje-vacio">No hay productos en tu pedido.</p>
+                    <p className="compra-exitosa__mensaje-vacio">Ya no hay Productos en tu Carrito.</p>
                 ) : (
                     <ul className="compra-exitosa__lista">
                         {orderItems.map((item, index) => (
