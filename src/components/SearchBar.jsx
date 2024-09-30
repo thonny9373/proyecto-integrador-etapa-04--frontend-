@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import CarritoContext from './../context/CarritoContext';
-import './../components/SearchBar.scss';
+import './SearchBar.scss';
 
 const SearchBar = () => {
   
