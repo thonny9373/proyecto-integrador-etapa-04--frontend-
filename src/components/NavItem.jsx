@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+
 const NavItem = ({item}) => {
   return (
     <li className="nav-bar__nav-item">
