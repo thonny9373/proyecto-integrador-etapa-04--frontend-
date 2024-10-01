@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import CarritoContext from './../context/CarritoContext';
-import 'src/components/searchBar.scss';
+import './TablaFila.scss';
 
 const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
